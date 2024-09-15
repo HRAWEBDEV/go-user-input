@@ -2,6 +2,7 @@ package note
 
 import (
 	"errors"
+	"fmt"
 	"time"
 )
 
@@ -20,4 +21,9 @@ func New(title, content string) (Note, error) {
 		content,
 		time.Now(),
 	}, nil
+}
+
+// struct methods
+func (n *Note) Display() {
+	fmt.Printf("your note titled %v has the following content:\n\n%v", n.title, n.content)
 }
